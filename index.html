@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informasi Durian</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #f4eaff, #fffaf5);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #6B4F1D,
+                    #8B6914,
+                    #A67C00
+                );
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px 55px;
+
+            border-radius: 0 0 40px 40px;
+
+            box-shadow:
+                0 8px 25px #C49A2C(71, 29, 95, 0.3);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            top: -70px;
+            left: -50px;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+            bottom: -120px;
+            right: -60px;
+        }
+
+        .fruit-icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.92;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 900px;
+            margin: -30px auto 50px;
+            padding: 0 18px;
+        }
+
+
+        /* =========================
+           IMAGE CARD
+        ========================= */
+
+        .fruit-card {
+            background: white;
+            padding: 15px;
+            border-radius: 28px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.09);
+
+            margin-bottom: 22px;
+
+            transition: 0.3s;
+        }
+
+        .fruit-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .fruit-image {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+
+            display: block;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 27px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 7px 22px rgba(0,0,0,0.06);
+
+            border-left: 6px solid #d48b37(327, 96%, 68%);
+
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section h2 {
+            color: #18571e;
+
+            font-size: 23px;
+
+            margin-bottom: 14px;
+        }
+
+        .section p {
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            text-align: justify;
+        }
+
+
+        /* =========================
+           INFORMASI UMUM
+        ========================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 18px;
+        }
+
+        .info-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #e0ca80,
+                    #f0e39b
+                );
+
+            padding: 19px;
+
+            border-radius: 18px;
+
+            border: 1px solid #ffe58eb7;
+        }
+
+        .info-box strong {
+            display: block;
+
+            color: #523e0470;
+
+            margin-bottom: 7px;
+
+            font-size: 15px;
+        }
+
+        .info-box span {
+            font-size: 14px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           HABITAT
+        ========================= */
+
+        .habitat-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf8e9,
+                    #f9fff6
+                );
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            border-left: 5px solid #5b9b45;
+        }
+
+        .habitat-box h3 {
+            color: #477c37;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           PENYEBARAN
+        ========================= */
+
+        .distribution {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 18px;
+        }
+
+        .region {
+            background: #e0ca80;
+
+            border-radius: 16px;
+
+            padding: 16px;
+
+            border: 1px solid #f0e39b;
+
+            transition: 0.3s;
+        }
+
+        .region:hover {
+            background: #ece79b;
+
+            transform: scale(1.02);
+        }
+
+        .region strong {
+            color: #9c68069f;
+
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .region span {
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           SENTRA BUDIDAYA
+        ========================= */
+
+        .sentra {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 13px;
+
+            margin: 14px 0;
+
+            padding: 14px;
+
+            background: #fff7e9;
+
+            border-radius: 15px;
+        }
+
+        .sentra-icon {
+            min-width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: #533d01;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 18px;
+        }
+
+        .sentra-text {
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        .sentra-text strong {
+            color: #804c09;
+        }
+
+
+        /* =========================
+           CIRI-CIRI
+        ========================= */
+
+        .characteristics {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 13px;
+
+            margin-top: 15px;
+        }
+
+        .characteristic {
+            padding: 17px;
+
+            background: #8b7946;
+
+            border-radius: 16px;
+        }
+
+        .characteristic h3 {
+            color: #1d491f;
+
+            font-size: 16px;
+
+            margin-bottom: 6px;
+        }
+
+        .characteristic p {
+            font-size: 14px;
+
+            text-align: left;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MANFAAT
+        ========================= */
+
+        .benefit {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin: 14px 0;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+        .benefit-icon {
+            min-width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: #533d01;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+
+        /* =========================
+           FAKTA MENARIK
+        ========================= */
+
+        .fact {
+            background:
+                linear-gradient(
+                    135deg,
+                    #6B4F1D,
+                    #8B6914,
+                    #A67C00
+                );
+
+            color: white;
+
+            border: none;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .fact h2 {
+            color: white;
+
+            margin-bottom: 13px;
+        }
+
+        .fact p {
+            text-align: center;
+
+            color: white;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MUSIK
+        ========================= */
+
+        .music-box {
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 100;
+        }
+
+        .music-button {
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #946d32,
+                    #f8be52
+                );
+
+            color: white;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 18px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+        .music-button:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 15px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 38px 18px 48px;
+            }
+
+            .header h1 {
+                font-size: 29px;
+            }
+
+            .fruit-icon {
+                font-size: 52px;
+            }
+
+            .fruit-image {
+                height: 230px;
+            }
+
+            .info-grid,
+            .distribution,
+            .characteristics {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 21px;
+
+                border-left-width: 4px;
+            }
+
+            .section h2 {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="fruit-icon">
+            🍈
+        </div>
+
+        <h1>Durian</h1>
+
+        <p>
+            Mengenal lebih dekat buah tropis Indonesia
+        </p>
+
+    </header>
+
+
+
+    <main class="container">
+
+
+        <!-- =========================
+             GAMBAR
+        ========================= -->
+
+        <div class="fruit-card">
+
+            <!--
+                GANTI URL GAMBAR INI
+                DENGAN GAMBAR DURIAN
+                YANG KAMU GUNAKAN
+            -->
+
+            <img
+                class="fruit-image"
+                src="durian.png"
+                alt="Durian"
+            >
+
+        </div>
+
+
+
+        <!-- =========================
+             TENTANG Durian
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🌿 Tentang Durian</h2>
+
+            <p>
+                Durian merupakan salah satu buah tropis yang terkenal dengan aroma khas dan kulitnya yang berduri.
+                 Buah ini memiliki nama ilmiah Durio zibethinus dan termasuk dalam famili Malvaceae. 
+                 Durian banyak dibudidayakan di berbagai wilayah Indonesia dan memiliki beberapa varietas 
+                dengan bentuk, ukuran, rasa, serta warna daging buah yang berbeda.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMASI UMUM
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🔎 Informasi Umum</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <strong>Nama Lokal</strong>
+
+                    <span>
+                        Durian
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Nama Ilmiah</strong>
+
+                    <span>
+                        Durio zibethinus
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Famili</strong>
+
+                    <span>
+                        Malvaceae
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Warna Buah</strong>
+
+                    <span>
+                        Hijau hingga hijau kekuningan
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Daging Buah</strong>
+
+                    <span>
+                       Putih kekuningan hingga kuning
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Bentuk Buah</strong>
+
+                    <span>
+                        Bulat, lonjong, atau agak tidak beraturan
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CIRI-CIRI
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🍃 Ciri-Ciri Durian</h2>
+
+            <div class="characteristics">
+
+                <div class="characteristic">
+
+                    <h3>🌳 Pohon</h3>
+
+                    <p>
+                        Pohon durian dapat tumbuh sekitar 20 hingga 40 meter dan memiliki batang yang besar
+                        serta kokoh
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🟠 Kulit</h3>
+
+                    <p>
+                        Kulit buah tebal dan dipenuhi duri yang tajam.
+                        Warna kulit umumnya hijau hingga hijau kecokelatan ketika matang.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🌿 Daun</h3>
+
+                    <p>
+                        Daunnya berbentuk lonjong, berwarna hijau pada bagian atas dan
+                        memiliki warna kecokelatan atau keemasan pada bagian bawah.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🍈 Daging buah</h3>
+
+                    <p>
+                        Daging buah memiliki tekstur lembut dan rasa yang manis dengan aroma yang sangat khas.
+                    </p>
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             HABITAT
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🌱 Habitat Durian</h2>
+
+            <div class="habitat-box">
+
+                <h3>🌿 Habitat Alami dan Budidaya</h3>
+
+                <p>
+                  Durian tumbuh dengan baik di daerah tropis yang hangat dan lembap.
+                  Tanaman ini membutuhkan curah hujan yang cukup, sinar matahari, 
+                  serta tanah yang subur dan memiliki drainase yang baik.
+                </p>
+
+                <p style="margin-top: 12px;">
+                   Durian dapat tumbuh di dataran rendah hingga daerah dengan ketinggian sedang. 
+                   Tanaman ini banyak ditemukan di kebun dan perkebunan masyarakat.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PENYEBARAN INDONESIA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>Penyebaran Durian di Indonesia</h2>
+
+            <p>
+                Durian tersebar di berbagai wilayah Indonesia,
+                terutama daerah yang memiliki kondisi iklim dan
+                lingkungan yang sesuai untuk pertumbuhan tanaman
+                manggis.
+            </p>
+
+
+            <div class="distribution">
+
+
+                <div class="region">
+
+                    <strong>Sumatera</strong>
+
+                    <span>
+                        Durian banyak ditemukan di berbagai wilayah Sumatera, 
+                        seperti Sumatera Barat, Sumatera Utara, Riau, dan Jambi.
+                    </span>
+
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Jawa</strong>
+
+                    <span>
+                       Budidaya durian juga berkembang di berbagai daerah Jawa,
+                       seperti Jawa Barat, Jawa Tengah, dan Jawa Timur.
+                    </span>
+
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Kalimantan</strong>
+
+                    <span>
+                       Durian merupakan salah satu buah yang banyak ditemukan di Kalimantan, 
+                       baik dari tanaman budidaya maupun pohon yang tumbuh di lingkungan masyarakat.
+                    </span>
+
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Sulawesi</strong>
+
+                    <span>
+                       Beberapa wilayah Sulawesi juga menjadi daerah penghasil 
+                       durian dan memiliki berbagai varietas lokal.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SENTRA BUDIDAYA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🚜 Sentra Budidaya Durian di Indonesia</h2>
+
+            <p>
+                Durian dibudidayakan di sejumlah daerah di
+                Indonesia. Beberapa wilayah dikenal sebagai
+                sentra produksi manggis karena memiliki kondisi
+                lingkungan dan kegiatan budidaya yang mendukung.
+            </p>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Sumatra Barat
+                    </strong>
+
+                    <br>
+
+                   Beberapa daerah seperti Kabupaten Padang Pariaman, Agam, 
+                   dan Tanah Datar memiliki budidaya durian
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Barat
+                    </strong>
+
+                    <br>
+
+                    Daerah seperti Bogor dan Kabupaten Subang dikenal memiliki produksi dan budidaya durian.
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Tengah
+                    </strong>
+
+                    <br>
+
+                    Durian juga banyak dibudidayakan di beberapa wilayah seperti Jepara, Semarang, dan sekitarnya.
+
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Kalimantan
+                    </strong>
+
+                    <br>
+
+                  Beberapa wilayah Kalimantan juga menjadi daerah penghasil durian 
+                  dan dikenal memiliki durian lokal dengan berbagai karakteristik.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             KANDUNGAN DAN MANFAAT
+        ========================= -->
+
+        <section class="section">
+
+            <h2>💜 Kandungan dan Manfaat</h2>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                    Mengandung karbohidrat dan energi yang cukup tinggi.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                  Mengandung vitamin C yang membantu mendukung daya tahan tubuh.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                    Mengandung serat yang baik untuk membantu menjaga kesehatan pencernaan.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                    ✓
+                 </div>
+
+                <div>
+                    Mengandung kalium yang berperan dalam menjaga fungsi tubuh.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                    ✓
+                 </div>
+
+                <div>
+                   Mengandung serat yang membantu menjaga kesehatan pencernaan.
+                </div>
+
+            </div>
+             
+
+
+        </section>
+
+
+
+        </section>
+
+
+
+        <!-- =========================
+             FAKTA MENARIK
+        ========================= -->
+
+        <section class="section fact">
+
+            <h2>✨ Tahukah Kamu?</h2>
+
+            <p>
+                Durian sering disebut sebagai “raja buah” karena ukuran, rasa, dan aromanya yang khas. 
+                👑🌳 Selain itu, setiap varietas durian dapat memiliki
+                rasa, aroma, tekstur, dan warna daging buah yang berbeda.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            ATPH SMKN 1 DUA KOTO 2026
+        </p>
+
+        <p>
+            © 2026 | ratihanjeliaguspamora
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         TOMBOL MUSIK
+    ========================= -->
+
+    <div class="music-box">
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()"
+            title="Putar musik"
+        >
+            🎵
+        </button>
+
+        <audio
+            id="backgroundMusic"
+            loop
+        >
+
+            <source
+                src="ssstik.io_1790242004453.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT MUSIK
+    ========================= -->
+
+    <script>
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+        const button =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                button.innerHTML = "🔊";
+
+            } else {
+
+                music.pause();
+
+                button.innerHTML = "🎵";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
